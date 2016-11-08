@@ -60,8 +60,8 @@ RateLimit::forIp($request->ip());
 
 ```php
 RateLimit::for('key')
-    ->allow(100)         // max attempts per window
-    ->perMinute()        // window = 60 seconds
+    ->allow(100)         // max attempts per window (must be >= 1)
+    ->perMinute()        // window = 60 seconds (per() requires >= 1)
     ->algorithm('sliding')
     ->cost(1)            // tokens to consume per attempt
     ->on('export');      // composite key: "key:export"
@@ -256,7 +256,7 @@ return [
 
 ## Custom Algorithms
 
-Implement the `RateLimitAlgorithm` contract:
+The `RateLimitAlgorithm` contract is public and can be implemented directly:
 
 ```php
 use PhilipRehberger\RateLimiter\Contracts\RateLimitAlgorithm;
@@ -276,7 +276,7 @@ class MyAlgorithm implements RateLimitAlgorithm
 }
 ```
 
-Then use it directly via `PendingRateLimit` (custom algorithm name resolution can be added by extending `PendingRateLimit`).
+> **Note:** Custom algorithms cannot yet be registered by name in the fluent API. Use the built-in `'fixed'`, `'sliding'`, or `'token_bucket'` algorithms, or instantiate your algorithm directly.
 
 ---
 

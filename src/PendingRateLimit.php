@@ -44,6 +44,10 @@ class PendingRateLimit
      */
     public function allow(int $maxAttempts): self
     {
+        if ($maxAttempts < 1) {
+            throw new InvalidArgumentException("maxAttempts must be >= 1, {$maxAttempts} given.");
+        }
+
         $this->maxAttempts = $maxAttempts;
 
         return $this;
@@ -58,6 +62,10 @@ class PendingRateLimit
      */
     public function per(int $seconds): self
     {
+        if ($seconds < 1) {
+            throw new InvalidArgumentException("Window seconds must be >= 1, {$seconds} given.");
+        }
+
         $this->windowSeconds = $seconds;
 
         return $this;
@@ -189,7 +197,6 @@ class PendingRateLimit
             'fixed' => new FixedWindowAlgorithm,
             'sliding' => new SlidingWindowAlgorithm,
             'token_bucket' => new TokenBucketAlgorithm,
-            default => new SlidingWindowAlgorithm,
         };
     }
 }

@@ -9,6 +9,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-03-13
+
+### Added
+- Input validation for `allow()` (must be >= 1) and `per()` (must be >= 1) — throws `InvalidArgumentException`
+
+### Fixed
+- Potential division by zero in `TokenBucketAlgorithm` when window is zero
+
+### Removed
+- Unreachable `default` case in algorithm resolution
+
+### Changed
+- Custom algorithm documentation clarified as not yet registrable by name in the fluent API
+
 ---
 
 ## [1.0.0] - 2026-03-09

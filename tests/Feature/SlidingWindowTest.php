@@ -130,13 +130,12 @@ class SlidingWindowTest extends TestCase
 
     public function test_allowed_false_when_limit_is_zero(): void
     {
-        // A limit of 0 should immediately block every request.
-        $result = RateLimit::for('sw-zero-limit')
+        $this->expectException(\InvalidArgumentException::class);
+
+        RateLimit::for('sw-zero-limit')
             ->allow(0)
             ->perMinute()
             ->algorithm('sliding')
             ->attempt();
-
-        $this->assertFalse($result->allowed());
     }
 }
