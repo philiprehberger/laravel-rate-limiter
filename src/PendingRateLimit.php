@@ -197,6 +197,9 @@ class PendingRateLimit
             'fixed' => new FixedWindowAlgorithm,
             'sliding' => new SlidingWindowAlgorithm,
             'token_bucket' => new TokenBucketAlgorithm,
+            default => throw new InvalidArgumentException(
+                "Unknown rate limit algorithm '{$this->algorithmName}'.",
+            ),
         };
     }
 }
