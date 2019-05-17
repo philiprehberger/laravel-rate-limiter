@@ -15,6 +15,7 @@
     "authors": [
         {
             "name": "Philip Rehberger",
+            "email": "me@philiprehberger.com",
             "role": "Developer"
         }
     ],
@@ -59,7 +60,7 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "test": "vendor/bin/phpunit",

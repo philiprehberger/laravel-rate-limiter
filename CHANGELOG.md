@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-03-17
+
+### Changed
+- Standardized package metadata, README structure, and CI workflow per package guide
+
 ## [1.1.0] - 2026-03-13
 
 ### Added
