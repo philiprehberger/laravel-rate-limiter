@@ -4,7 +4,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/philiprehberger/laravel-rate-limiter.svg)](https://packagist.org/packages/philiprehberger/laravel-rate-limiter)
 [![License](https://img.shields.io/github/license/philiprehberger/laravel-rate-limiter)](LICENSE)
 
-Advanced rate limiting for Laravel 11 and 12. Choose from three algorithms — **fixed window**, **sliding window**, or **token bucket** — with a fluent API for per-user, per-IP, and per-action controls.
+Advanced rate limiting with sliding window, token bucket, and per-entity controls for Laravel.
 
 ## Requirements
 
