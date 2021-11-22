@@ -41,6 +41,25 @@ if ($result->denied()) {
 }
 ```
 
+### Handling Rate-Limited Responses
+
+```php
+$result = RateLimit::for('api')
+    ->allow(100)
+    ->perMinute()
+    ->attempt();
+
+if ($result->denied()) {
+    $seconds = $result->retryAfter(); // e.g. 23
+
+    return response()->json([
+        'message' => "Too many requests. Retry in {$seconds} seconds.",
+        'retry_after' => $seconds,
+        'remaining' => $result->remainingTokens(),
+    ], 429, $result->headers());
+}
+```
+
 ### Entry Points
 
 ```php
@@ -128,6 +147,8 @@ return [
 |-------------------|------|-------------|
 | `->allowed()` | `bool` | Whether the attempt was allowed |
 | `->denied()` | `bool` | Whether the attempt was denied |
+| `->retryAfter()` | `?int` | Seconds until next token is available; `null` if not rate-limited |
+| `->remainingTokens()` | `int` | Remaining tokens in the current window (clamped to 0) |
 | `->remaining` | `int` | Remaining tokens in current window |
 | `->limit` | `int` | Configured limit |
 | `->retryAfter` | `int\|null` | Seconds until allowed; `null` if allowed |
