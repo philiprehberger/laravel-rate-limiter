@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhilipRehberger\RateLimiter;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use PhilipRehberger\RateLimiter\Middleware\RateLimitMiddleware;
 
@@ -25,7 +26,7 @@ class RateLimiterServiceProvider extends ServiceProvider
 
         // Register middleware alias for Laravel 10 and below.
         // Laravel 11+ users should register via bootstrap/app.php.
-        $router = $this->app->make(\Illuminate\Routing\Router::class);
+        $router = $this->app->make(Router::class);
         $router->aliasMiddleware('rate-limit', RateLimitMiddleware::class);
     }
 
