@@ -106,7 +106,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: [test, lint, phpstan]
+    needs: [tests, code-style, static-analysis]
     name: Publish to Packagist
 
     steps:
