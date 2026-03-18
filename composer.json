@@ -64,7 +64,7 @@
     "prefer-stable": true,
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "pint": "vendor/bin/pint",
-        "stan": "vendor/bin/phpstan analyse --memory-limit=512M"
+        "lint": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=512M"
     }
 }
