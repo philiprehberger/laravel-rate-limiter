@@ -15,6 +15,7 @@
     "authors": [
         {
             "name": "Philip Rehberger",
+            "email": "me@philiprehberger.com",
             "role": "Developer"
         }
     ],
@@ -59,11 +60,11 @@
             "phpstan/extension-installer": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "pint": "vendor/bin/pint",
-        "stan": "vendor/bin/phpstan analyse --memory-limit=512M"
+        "lint": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=512M"
     }
 }
