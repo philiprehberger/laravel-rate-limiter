@@ -1,6 +1,6 @@
 {
     "name": "philiprehberger/laravel-rate-limiter",
-    "description": "Advanced rate limiting with sliding window, token bucket, and per-entity controls for Laravel.",
+    "description": "Advanced rate limiting with sliding window, token bucket, and per-entity controls for Laravel",
     "type": "library",
     "keywords": [
         "laravel",
