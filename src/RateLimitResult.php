@@ -31,6 +31,24 @@ class RateLimitResult
     }
 
     /**
+     * Seconds until the next token is available.
+     *
+     * Returns null when the request is not rate-limited.
+     */
+    public function retryAfter(): ?int
+    {
+        return $this->allowed ? null : $this->retryAfter;
+    }
+
+    /**
+     * Remaining tokens in the current window.
+     */
+    public function remainingTokens(): int
+    {
+        return max(0, $this->remaining);
+    }
+
+    /**
      * Standard rate limit response headers.
      *
      * @return array<string, string|int>

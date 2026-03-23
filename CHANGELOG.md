@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-03-22
+
+### Added
+- `retryAfter(): ?int` method on `RateLimitResult` — returns seconds until next token is available (null if not rate-limited)
+- `remainingTokens(): int` method on `RateLimitResult` — returns remaining tokens in the current window, clamped to zero
+
 ## [1.1.1] - 2026-03-17
 
 ### Changed
