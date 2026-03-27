@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/laravel-rate-limiter/actions/workflows/tests.yml/badge.svg)](https://github.com/philiprehberger/laravel-rate-limiter/actions/workflows/tests.yml)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/philiprehberger/laravel-rate-limiter.svg)](https://packagist.org/packages/philiprehberger/laravel-rate-limiter)
 [![License](https://img.shields.io/github/license/philiprehberger/laravel-rate-limiter)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Advanced rate limiting with sliding window, token bucket, and per-entity controls for Laravel.
 
